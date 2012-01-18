@@ -1,0 +1,15 @@
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\ApplicationIcon.png
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\Background.png
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\Imbube.NationalRail.dll
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\Imbube.NationalRail.pdb
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\AppManifest.xaml
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\Imbube.NationalRail.xap
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\obj\Debug\App.g.i.cs
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\obj\Debug\MainPage.g.i.cs
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\obj\Debug\Imbube.NationalRail.g.resources
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\obj\Debug\Imbube.NationalRail.dll
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\obj\Debug\Imbube.NationalRail.pdb
+C:\Dev\GIT\Imbube.NationalRail\Imbube.NationalRail\obj\Debug\XapCacheFile.xml

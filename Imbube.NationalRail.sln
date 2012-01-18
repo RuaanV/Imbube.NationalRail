@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imbube.NationalRail", "Imbube.NationalRail\Imbube.NationalRail.csproj", "{7C465B07-F4FB-4F9C-92D9-817EA6C19CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imbube.NationalRail.Domain", "Imbube.NationalRail.Domain\Imbube.NationalRail.Domain.csproj", "{604B02BA-587F-4964-A788-F75C63B35768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imbube.NationalRail.Tests", "Imbube.NationalRail.Tests\Imbube.NationalRail.Tests.csproj", "{F4ADA066-0CDD-4F38-909F-A7B98C792A3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C465B07-F4FB-4F9C-92D9-817EA6C19CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C465B07-F4FB-4F9C-92D9-817EA6C19CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C465B07-F4FB-4F9C-92D9-817EA6C19CF5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7C465B07-F4FB-4F9C-92D9-817EA6C19CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C465B07-F4FB-4F9C-92D9-817EA6C19CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C465B07-F4FB-4F9C-92D9-817EA6C19CF5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{604B02BA-587F-4964-A788-F75C63B35768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{604B02BA-587F-4964-A788-F75C63B35768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{604B02BA-587F-4964-A788-F75C63B35768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{604B02BA-587F-4964-A788-F75C63B35768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4ADA066-0CDD-4F38-909F-A7B98C792A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4ADA066-0CDD-4F38-909F-A7B98C792A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4ADA066-0CDD-4F38-909F-A7B98C792A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4ADA066-0CDD-4F38-909F-A7B98C792A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
