@@ -10,8 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Silverlight.Testing;
 
-namespace Imbube.NationalRail
+namespace Imbube.NationalRail.Tests
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -19,19 +20,7 @@ namespace Imbube.NationalRail
         public MainPage()
         {
             InitializeComponent();
-
-            // Set the data context of the listbox control to the sample data
-           // DataContext = App.ViewModel;
-            this.Loaded += new RoutedEventHandler(MainPage_Loaded);
-        }
-
-        // Load data for the ViewModel Items
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            //if (!App.ViewModel.IsDataLoaded)
-            //{
-            //    App.ViewModel.LoadData();
-            //}
+            Content = UnitTestSystem.CreateTestPage();
         }
     }
 }

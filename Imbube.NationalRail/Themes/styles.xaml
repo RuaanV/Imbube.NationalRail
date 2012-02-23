@@ -1,0 +1,57 @@
+﻿<!--
+===============================================================================
+ Microsoft patterns & practices
+ Windows Phone 7 Developer Guide
+===============================================================================
+ Copyright © Microsoft Corporation.  All rights reserved.
+ This code released under the terms of the 
+ Microsoft patterns & practices license (http://wp7guide.codeplex.com/license)
+===============================================================================
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:Core="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+    xmlns:converters="clr-namespace:TailSpin.PhoneClient.Resources.Converters;assembly=TailSpin.PhoneClient" >
+
+    <!--Visibility Converter-->
+    <!--<converters:VisibilityConverter x:Key="VisibilityConverter"/>
+    <converters:VisibilityConverter x:Key="NegativeVisibilityConverter" Negative="True"/>-->
+
+    
+
+    <!--Style for Survey List-->
+
+
+    <Style x:Key="SurveyPopupItemStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="24,15,10,15"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontFamily" Value="Segoe WP SemiLight"/>
+    </Style>
+
+    <!--TextBlock to show when there are no items on the list-->
+    <ControlTemplate x:Key="NoItemsTextBlock">
+        <TextBlock 
+            VerticalAlignment="Top"
+            Margin="12" Width="430"
+            Style="{StaticResource PhoneTextLargeStyle}"
+            Foreground="{StaticResource PhoneSubtleBrush}"
+            Text="There are no items for this view. You can get new Surveys by pressing the Sync icon. Data transfer charges might be applied."
+            TextWrapping="Wrap"/>
+    </ControlTemplate>
+
+    <!--TextBlock to show when there are no settings configured-->
+    <ControlTemplate x:Key="SettingsNotConfiguredTextBlock">
+        <TextBlock 
+            VerticalAlignment="Top"
+            Margin="12" 
+            Style="{StaticResource PhoneTextLargeStyle}"
+            Foreground="{StaticResource PhoneSubtleBrush}"
+            Text="To start using Tailspin for Windows Phone, configure your Settings."
+            TextWrapping="Wrap"/>
+    </ControlTemplate>
+
+</ResourceDictionary>

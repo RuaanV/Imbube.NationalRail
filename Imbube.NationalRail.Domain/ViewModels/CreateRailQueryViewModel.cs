@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,10 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Imbube.NationalRail.Domain
+namespace Imbube.NationalRail.Domain.ViewModels
 {
-    public class Class1
+    public class CreateRailQueryViewModel : INotifyPropertyChanged
     {
-
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

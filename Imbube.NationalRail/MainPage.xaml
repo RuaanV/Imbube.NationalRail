@@ -1,63 +1,101 @@
-﻿<phone:PhoneApplicationPage 
-    x:Class="Imbube.NationalRail.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False">
+﻿<phone:PhoneApplicationPage
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+	xmlns:Imbube_NationalRail_ViewModel="clr-namespace:Imbube.NationalRail.ViewModel" 
+	x:Class="Imbube.NationalRail.MainPage" 
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	SupportedOrientations="Portrait"  Orientation="Portrait"
+	shell:SystemTray.IsVisible="False">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="StationTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding Name}"/>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="RouteTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding RouteName}"/>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="StationTemplate1">
+			<StackPanel>
+				<TextBlock Text="{Binding Name}"/>
+			</StackPanel>
+		</DataTemplate>
+	</phone:PhoneApplicationPage.Resources>
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
- 
-        <!--Panorama control-->
-        <controls:Panorama Title="my application">
-            <controls:Panorama.Background>
-                <ImageBrush ImageSource="PanoramaBackground.png"/>
-            </controls:Panorama.Background>
- 
-            <!--Panorama item one-->
-            <controls:PanoramaItem Header="first item">
-                <!--Double line list with text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Width="432" Height="78">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </controls:PanoramaItem>
- 
-            <!--Panorama item two-->
-            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Header="second item">
-                <!--Double line list with image placeholder and text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                <!--Replace rectangle with image-->
-                                <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
-                                <StackPanel Width="311">                                    
-                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </controls:PanoramaItem>
-        </controls:Panorama>
-    </Grid>
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding Source={StaticResource Locator}}">
+
+		<!--Panorama control-->
+		<controls:Panorama Title="Get Me Home">
+			<controls:Panorama.Background>
+				<ImageBrush ImageSource="PanoramaBackground.png" />
+			</controls:Panorama.Background>
+
+			<!--Panorama item one-->
+			<controls:PanoramaItem Header="Train Times">
+				<!--Double line list with text wrapping-->
+				<Grid>
+
+					<TextBlock FontWeight="Bold" Height="Auto" HorizontalAlignment="Left" Margin="12,2,0,5" x:Name="routePromptTextBlock" Text="Select Saved Route" VerticalAlignment="Top" Width="Auto" />
+					<toolkit:ListPicker Margin="12,33,12,4" ItemTemplate="{StaticResource RouteTemplate}" ItemsSource="{Binding Main.SavedRoutes}"/>
+					<TextBlock FontWeight="Bold" Height="Auto" HorizontalAlignment="Left" Margin="12,107,0,0" x:Name="queryRouteTextBlock" Text="Or" VerticalAlignment="Top" Width="Auto" ></TextBlock>
+					<TextBlock Margin="12,138,0,32" HorizontalAlignment="Left" Height="Auto" Text="From Station" />
+					<toolkit:ListPicker Margin="12,169,12,-67" ItemTemplate="{StaticResource StationTemplate1}" ItemsSource="{Binding Main.RailStations}"></toolkit:ListPicker>
+					<TextBlock Margin="12,238,0,-78" HorizontalAlignment="Left" Text="To Station" />
+					<toolkit:ListPicker Margin="12,267,12,45" ItemTemplate="{StaticResource StationTemplate1}" ItemsSource="{Binding Main.RailStations}"></toolkit:ListPicker>
+					
+					
+					<Button Name="getTrainScheduleButton"  Height="70" Width="120"
+							Click="" HorizontalAlignment="Left" Margin="0,331,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height, HorizontalMargin" 
+						>
+							<!--<Image Source="/Images/appbar.plus.png" Opacity="0.5" />
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Border x:Name="Border" Background="Black">
+									<ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+								</Border>
+							</ControlTemplate>
+						</Button.Template>-->
+					</Button>
+					<!--<ScrollViewer Margin="0,150,0,0" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="400">
+									
+					</ScrollViewer>-->
+					
+					
+
+				</Grid>
+
+			</controls:PanoramaItem>
+
+			<!--Panorama item two-->
+			<!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+			<controls:PanoramaItem Header="Routes">
+				<!--Double line list with image placeholder and text wrapping-->
+				<Grid>
+					<TextBlock FontWeight="Bold" Height="Auto" HorizontalAlignment="Left" Margin="12,30,0,0" x:Name="createRouteTextBlock" Text="Create and Save a  Route" VerticalAlignment="Top" Width="Auto" ></TextBlock>
+					<TextBlock Margin="12,60,0,0" HorizontalAlignment="Left" Height="Auto" Text="From Station" />
+					<toolkit:ListPicker Margin="12,90,12,12" ItemTemplate="{StaticResource StationTemplate1}" ItemsSource="{Binding Main.RailStations}"></toolkit:ListPicker>
+					<TextBlock Margin="12,160,0,0" HorizontalAlignment="Left" Height="Auto" Text="To Station" />
+					<toolkit:ListPicker Margin="12,190,12,12" ItemTemplate="{StaticResource StationTemplate1}" ItemsSource="{Binding Main.RailStations}"></toolkit:ListPicker>
+					<Button Name="saveRouteButton"  Height="70" Width="120"
+							Click="" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height, HorizontalMargin" 
+						></Button>		
+				</Grid>
+			</controls:PanoramaItem>
+			<controls:PanoramaItem Header="Settings">
+				<!--Double line list with image placeholder and text wrapping-->
+				<Grid></Grid></controls:PanoramaItem>
+		</controls:Panorama>
+	</Grid>
 </phone:PhoneApplicationPage>
